@@ -1,10 +1,14 @@
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Clone, Copy)]
 pub struct Card {
     suit: Suit,
     rank: Rank,
 }
 
 impl Card {
+    pub fn new(suit: Suit, rank: Rank) -> Self {
+        Self { suit, rank }
+    }
+
     pub fn suit(&self) -> &Suit {
         &self.suit
     }
@@ -26,14 +30,14 @@ impl Ord for Card {
     }
 }
 
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Clone, Copy)]
 pub enum Suit {
     Hearts,
     Clubs,
     Diamonds,
     Spades,
 }
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Clone, Copy)]
 pub enum Rank {
     Number(usize),
     Jake,
